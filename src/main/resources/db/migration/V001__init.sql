@@ -5,7 +5,6 @@ CREATE TABLE IF NOT EXISTS tb_person(
     age INTEGER NOT NULL,
     nationality VARCHAR(108) NOT NULL,
     city VARCHAR(108) NOT NULL,
-    team_id VARCHAR(36) NOT NULL,
     CONSTRAINT PK_person PRIMARY KEY (id)
 );
 
@@ -80,5 +79,4 @@ CREATE TABLE IF NOT EXISTS tb_person_team(
     FOREIGN KEY (team_id) REFERENCES tb_team(id)
 );
 
-ALTER TABLE tb_person ADD CONSTRAINT FK_team_id FOREIGN KEY (team_id) REFERENCES tb_team(id);
 ALTER TABLE tb_team ADD CONSTRAINT FK_stadium_id FOREIGN KEY (stadium_id) REFERENCES tb_stadium(id);
